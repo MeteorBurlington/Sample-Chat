@@ -1,20 +1,27 @@
+Messages = new Mongo.Collection("messages");
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+  Template.submit_text.events({
+    "submit form": function (event) {
+    // Prevent default browser form submit
+      event.preventDefault();
+ 
+      // Get value from form element
+      var msg = event.target.message.value;
+ 
+      // Insert a task into the collection
+      Messages.insert({
+        text: msg,
+        createdAt: new Date() // current time
+      });
+ 
+      // Clear form
+      event.target.text.value = "";
     }
   });
 }
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
