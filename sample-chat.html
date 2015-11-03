@@ -1,14 +1,16 @@
 <head>
-  <title>sample-chat</title>
+  <title>Sample Chat</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Chat [Pun]!</h1>
 
-  {{> hello}}
+  {{> submit_text}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="submit_text">
+  <form action="">
+  	<input type="text" name="message" placeholder="Enter message">
+		<input type="submit" value="Submit">
+  </form>
 </template>
