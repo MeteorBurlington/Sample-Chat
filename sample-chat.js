@@ -4,7 +4,11 @@ if (Meteor.isClient) {
 
   Template.message_list.helpers({
     messages: function () {
-      return Messages.find({});
+      var filter = {}
+      var sort = {
+        sort: {createdAt: -1}
+      }
+      return Messages.find(filter, sort);
     }
   });
 
