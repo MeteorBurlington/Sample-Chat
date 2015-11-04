@@ -6,6 +6,7 @@
   <h1>Chat [Pun]!</h1>
 
   {{> submit_text}}
+  {{> message_list}}
 </body>
 
 <template name="submit_text">
@@ -13,4 +14,15 @@
   	<input type="text" name="message" placeholder="Enter message">
 		<input type="submit" value="Submit">
   </form>
+</template>
+
+<template name="message_list">
+
+  <ul>
+  	{{#each messages}}
+  		<li>
+  			{{text}}
+  		</li>
+  	{{/each}}
+  </ul>
 </template>

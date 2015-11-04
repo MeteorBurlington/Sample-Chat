@@ -2,6 +2,12 @@ Messages = new Mongo.Collection("messages");
 
 if (Meteor.isClient) {
 
+  Template.message_list.helpers({
+    messages: function () {
+      return Messages.find({});
+    }
+  });
+
   Template.submit_text.events({
     "submit form": function (event) {
     // Prevent default browser form submit
