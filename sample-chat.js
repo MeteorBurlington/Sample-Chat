@@ -17,7 +17,7 @@ if (Meteor.isClient) {
       });
  
       // Clear form
-      event.target.text.value = "";
+      event.target.message.value = "";
     }
   });
 }
