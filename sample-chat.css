@@ -1,4 +1,15 @@
 /* CSS declarations go here */
+.message_form {
+	margin-top: 15px;
+}
+.message_form input.textbox {
+	width: 70%;
+}
+.message_form input.submit {
+	width: 20%;
+}
+
+
 .messages {
 	list-style: none;
 	padding-left: 0;
